@@ -36,8 +36,49 @@ public class Ex08 {
     }
 
     String compute(int[] giftsWeights) {
-        String output = null;
-        //put your logic here
-        return output;
+        boolean[] possivel = new boolean[11];
+        possivel[5] = true;
+
+        for (int peso : giftsWeights)
+        {
+            boolean[] novo = new boolean[11];
+
+            for (int d = -5; d <= 5; d++)
+            {
+                if (possivel[d + 5])
+                {
+                    int ladoA = d + peso;
+                    int ladoB = d - peso;
+
+                    if (ladoA >= -5 && ladoA <= 5)
+                    {
+                        novo[ladoA + 5] = true;
+                    }
+                    if (ladoB >= -5 && ladoB <= 5)
+                    {
+                        novo[ladoB + 5] = true;
+                    }
+                }
+            }
+
+            possivel = novo;
+
+            boolean tem = false;
+            for (boolean p : possivel)
+            {
+                if (p)
+                {
+                    tem = true;
+                    break;
+                }
+            }
+
+            if (!tem)
+            {
+                return "N";
+            }
+        }
+
+        return "S";
     }
 }

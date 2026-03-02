@@ -27,8 +27,25 @@ public class Ex05 {
     }
 
     int compute(int[] velas) {
-        int output = -1;
-        //put your logic here
-        return output;
+        int maior = velas[0];
+        int quantidade = 0;
+
+        for (int i = 1; i < velas.length; i++)
+        {
+            if (velas[i] > maior)
+            {
+                maior = velas[i];
+            }
+        }
+
+        for (int i = 0; i < velas.length; i++)
+        {
+            if (velas[i] == maior)
+            {
+                quantidade++;
+            }
+        }
+
+        return quantidade;
     }
 }

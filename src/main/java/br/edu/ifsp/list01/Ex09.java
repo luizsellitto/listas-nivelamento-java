@@ -16,6 +16,8 @@ package br.edu.ifsp.list01;
     | 25 30 45 -1         | 33.33 3 0.00%  |
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi (IFSP/SCL) e Adenilso Simão (ICMC/USP)
 */
+import java.util.Locale;
+
 public class Ex09 {
 
     public static void main(String[] args) {
@@ -26,7 +28,29 @@ public class Ex09 {
 
     String compute(int[] input) {
         String output = null;
-        //put your logic here
+        double soma = 0;
+        double media = 0;
+        int maiores = 0;
+        int idosos = 0;
+        int i;
+        for(i = 0; input[i] >= 0; i++)
+        {
+            soma += input[i];
+            if (input[i] >= 18)
+            {
+                maiores += 1;
+            }
+            if (input[i] > 75)
+            {
+                idosos += 1;
+            }
+        }
+        double percentualIdosos = 0.00;
+        media = soma/i;
+        if(idosos != 0) {
+            percentualIdosos = idosos/ (double)i * 100;
+        }
+        output = String.format(Locale.US, "%.2f %d %.2f%%", media, maiores, percentualIdosos);
         return output;
     }
 }

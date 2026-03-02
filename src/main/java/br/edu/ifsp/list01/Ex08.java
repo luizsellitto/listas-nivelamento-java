@@ -29,7 +29,17 @@ public class Ex08 {
 
     int compute(int n, int c) {
         int output = -1;
-        //put your logic here
+        int valor = 0;
+        for(int i = 1;i <= n; i++)
+        {
+            valor += c;
+            if(c == 1)
+            {
+                continue;
+            }
+            c -= 1;
+        }
+        output = valor;
         return output;
     }
 }

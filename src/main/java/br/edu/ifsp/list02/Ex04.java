@@ -33,8 +33,20 @@ public class Ex04 {
     }
 
     int compute(int ia, int ib, int fa, int fb) {
-        int output = -1;
-        //put your logic here
-        return output;
+        boolean mudaA = ia != fa;
+        boolean mudaB = ib != fb;
+        if(!mudaA && !mudaB)
+        {
+            return 0;
+        }
+        if(mudaA && mudaB)
+        {
+            return 1;
+        }
+        if(mudaA && !mudaB)
+        {
+            return 1;
+        }
+        return 2;
     }
 }

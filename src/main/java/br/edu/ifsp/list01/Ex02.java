@@ -28,7 +28,27 @@ public class Ex02 {
 
     String compute(int a, int b, int c) {
         String output = null;
-        //put your logic here
+        if (a <= 0 || b <= 0 || c <= 0)
+        {
+            output = "Erro";
+        }
+        else if ((a + b) <= c || (a + c) <= b || (b + c) <= a)
+        {
+            output = "Nao forma triangulo";
+        }
+        else if (a != b && b != c && a != c)
+        {
+            output = "Escaleno";
+        }
+        else if ((a == b && b != c) || (a == c && c != b) || (b == c && a != b))
+        {
+            output = "Isosceles";
+        }
+        else if (a == b && b == c)
+        {
+            output = "Equilatero";
+        }
+
         return output;
     }
 }

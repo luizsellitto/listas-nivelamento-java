@@ -19,6 +19,7 @@ package br.edu.ifsp.list01;
     5.0
     7
 */
+import java.util.Locale;
 public class Ex06 {
 
     public static void main(String[] args) {
@@ -29,7 +30,10 @@ public class Ex06 {
 
     String compute(double L, double a, double c, double m) {
         String output = null;
-        //put your logic here
+        double area = L * a;
+        int latas = (int) Math.ceil(area/m);
+        double custo = latas * c;
+        output = String.format(Locale.US, "%d %.2f", latas, custo);
         return output;
     }
 }

@@ -1,4 +1,5 @@
 package br.edu.ifsp.list02;
+import static java.util.Arrays.sort;
 
 /*
     Uma loja especializada em vendas pela internet está desenvolvendo drones para entrega de caixas com as compras dos
@@ -49,8 +50,21 @@ public class Ex09 {
     }
 
     String compute(int a, int b, int c, int h, int l) {
-        String output = null;
-        //put your logic here
+        String output;
+
+        int janelaMenor = Math.min(h, l);
+        int janelaMaior = Math.max(h, l);
+        int[] caixa = {a, b, c};
+        sort(caixa);
+
+        if (caixa[0] <= janelaMenor && caixa[1] <= janelaMaior)
+        {
+            output = "S";
+        } else
+        {
+            output = "N";
+        }
+
         return output;
     }
 }

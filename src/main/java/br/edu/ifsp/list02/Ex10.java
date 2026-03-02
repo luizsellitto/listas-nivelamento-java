@@ -36,8 +36,19 @@ public class Ex10 {
     }
 
     String compute(int x, int y, int a, int f, int d) {
-        String output = null;
-        //put your logic here
+        String output;
+
+        if (f < 0 || f > 180 || d < 0)
+        {
+            return "Erro";
+        }
+
+        double angulo = Math.toRadians(a + (90 - f));
+        int x2 = (int) Math.round(x + d * Math.cos(angulo));
+        int y2 = (int) Math.round(y + d * Math.sin(angulo));
+
+        output = "(" + x2 + "," + y2 + ")";
+
         return output;
     }
 }

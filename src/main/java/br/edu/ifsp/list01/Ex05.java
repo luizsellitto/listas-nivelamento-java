@@ -20,6 +20,8 @@ package br.edu.ifsp.list01;
     10.00
     50
 */
+import java.util.Locale;
+
 public class Ex05 {
 
     public static void main(String[] args) {
@@ -30,7 +32,14 @@ public class Ex05 {
 
     String compute(int L, double m, double a, int v) {
         String output =  null;
-        //put your logic here
+        double multa = 0;
+
+        if (v > L)
+        {
+            multa = m + (v - L) * a;
+        }
+        output = String.format(Locale.US, "%.2f", multa);
+        //locale us para mudar para ., pq no teste está no padrão estadunidense
         return output;
     }
 }

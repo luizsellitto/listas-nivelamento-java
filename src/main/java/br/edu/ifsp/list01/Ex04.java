@@ -15,6 +15,7 @@ package br.edu.ifsp.list01;
     2
     5
  */
+
 public class Ex04 {
 
     public static void main(String[] args) {
@@ -25,7 +26,15 @@ public class Ex04 {
 
     int compute(int n, int c, int m) {
         int output =  -1;
-        //put your logic here
+        output = n / c;
+        int embalagem = output;
+        int novos = 0;
+        while (embalagem >= m)
+        {
+            novos = embalagem / m;
+            output += novos;
+            embalagem = novos + (embalagem % m);
+        }
         return output;
     }
 }

@@ -16,8 +16,90 @@ public class Ex03 {
     }
 
     String compute(int[] firstFive, int[] otherInts) {
-        String output = null;
-        //put your logic here
-        return output;
+        String output = "";
+        int[] vetor = new int[10];
+        int tamanho = 0;
+
+        if (firstFive == null || firstFive.length != 5)
+        {
+            return "Erro";
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = i + 1; j < 5; j++)
+            {
+                if (firstFive[i] == firstFive[j])
+                {
+                    return "Erro";
+                }
+            }
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            vetor[i] = firstFive[i];
+            tamanho++;
+        }
+
+        for (int i = 0; i < tamanho; i++)
+        {
+            output += vetor[i];
+            if (i < tamanho - 1)
+            {
+                output += " ";
+            }
+        }
+        output += "\n";
+
+        for (int k = 0; k < otherInts.length; k++)
+        {
+            int num = otherInts[k];
+            boolean encontrado = false;
+            int pos = -1;
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                if (vetor[i] == num)
+                {
+                    encontrado = true;
+                    pos = i;
+                    break;
+                }
+            }
+
+            if (encontrado)
+            {
+                for (int i = pos; i < tamanho - 1; i++)
+                {
+                    vetor[i] = vetor[i + 1];
+                }
+                tamanho--;
+            } else {
+                if (tamanho >= 10)
+                {
+                    return "Erro";
+                }
+                vetor[tamanho] = num;
+                tamanho++;
+            }
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                output += vetor[i];
+                if (i < tamanho - 1)
+                {
+                    output += " ";
+                }
+            }
+            output += "\n";
+
+            if (tamanho == 0 || tamanho == 10)
+            {
+                break;
+            }
+        }
+
+        return output.trim();
     }
 }

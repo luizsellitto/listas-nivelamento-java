@@ -25,7 +25,25 @@ public class Ex03 {
 
     String compute(int input) {
         String output = null;
-        //put your logic here
+        if(input <= 0)
+        {
+            output = "Erro";
+        }
+        else if(input % 400 == 0)
+        {
+            output = "Ano bissexto";
+        }
+        else if(input % 100 != 0 && input % 4 == 0)
+        {
+            output = "Ano bissexto";
+        }
+        else
+        {
+            output = "Ano nao bissexto";
+        }
+//        São bissextos todos os anos múltiplos de 400, p. ex: 1600, 2000, 2400, 2800...
+//        São bissextos todos os múltiplos de 4 e não múltiplos de 100, p.ex: 1996, 2004, 2008, 2012, 2016…
+//        Não são bissextos os demais anos.
         return output;
     }
 }

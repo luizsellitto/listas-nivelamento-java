@@ -32,8 +32,15 @@ public class Ex10 {
     }
 
     String compute(int x1, int v1, int x2, int v2) {
-        String output = null;
-        //put your logic here
-        return output;
+        if (v1 == v2) {
+            return (x1 == x2) ? "SIM" : "NAO";
+        }
+
+        if ((x2 - x1) % (v1 - v2) == 0 &&
+                (x2 - x1) / (v1 - v2) >= 0) {
+            return "SIM";
+        }
+        return "NAO";
+
     }
 }
