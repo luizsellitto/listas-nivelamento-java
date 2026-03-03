@@ -14,8 +14,30 @@ public class Ex02 {
     }
 
     String compute(String word, int number) {
-        String output = null;
-        //put your logic here
-        return output;
+        if (word == null || word.isEmpty() || number <= 0 || number > word.length())
+        {
+            return "";
+        }
+
+        String primeira = word.substring(0, number);
+        String ultima = word.substring(0, number);
+        String sub;
+
+        for (int i = 1; i <= word.length() - number; i++)
+        {
+            sub = word.substring(i, i + number);
+
+            if (sub.compareTo(primeira) < 0)
+            {
+                primeira = sub;
+            }
+
+            if (sub.compareTo(ultima) > 0)
+            {
+                ultima = sub;
+            }
+        }
+
+        return primeira + " " + ultima;
     }
 }
