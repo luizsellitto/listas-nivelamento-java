@@ -18,8 +18,53 @@ public class Ex01 {
     }
 
     String compute(String input) {
-        String output = null;
-        //put your logic here
-        return output;
+        if (input == null || input.length() <= 1)
+        {
+            return "Invalido";
+        }
+        /*Outras maneiras de resolver (substring e temp), maneira mais simples seria com substring*/
+//        StringBuilder output = new StringBuilder();
+//        char[] letras = input.toCharArray();
+//        String temp = "";
+//
+//        for (int i = 0; i < input.length()-1; i++)
+//        {
+//            temp += String.format("%c", letras[i]);
+//            output.append(temp).append("*");
+////            output += input.substring(0, i) + "*";
+//        }
+//
+//        for (int i = input.length() - 1; i >= 1; i--)
+//        {
+//            output.append(input, 0, i);
+//            if (i > 1)
+//            {
+//                output.append("*");
+//            }
+//        }
+        StringBuilder output = new StringBuilder();
+        char[] letras = input.toCharArray();
+        StringBuilder temp = new StringBuilder();
+
+        for (int i = 0; i < input.length() - 1; i++)
+        {
+            temp.append(letras[i]);
+            output.append(temp).append("*");
+        }
+
+        temp.append(letras[input.length() - 1]);
+
+        for (int i = input.length() - 1; i >= 0; i--)
+        {
+            output.append(temp);
+
+            if (i > 0)
+            {
+                output.append("*");
+            }
+
+            temp.setLength(temp.length() - 1);
+        }
+        return output.toString();
     }
 }
