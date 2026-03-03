@@ -24,7 +24,9 @@ public class Ex03 {
 
         if (input.equals(invertida)) {
             return "Sim";
-        } else {
+        }
+        else
+        {
             return "Nao";
         }
     }

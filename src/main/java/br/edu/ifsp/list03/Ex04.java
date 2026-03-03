@@ -1,5 +1,5 @@
 package br.edu.ifsp.list03;
-
+import java.util.Arrays;
 /*
 Dada duas Strings A e B, faça um programa que imprima “Sim” se A e B são anagramas e “Nao”, caso contrário.
 Um anagrama é a transposição de letras de palavra ou frase para formar outra palavra ou frase diferente.
@@ -13,8 +13,30 @@ public class Ex04 {
     }
 
     String compute(String wordA, String wordB) {
-        String output = null;
-        //put your logic here
+        String output = "Sim";
+
+        if (wordA.length() != wordB.length())
+        {
+            output = "Nao";
+        }
+        else
+        {
+            char[] a = wordA.toCharArray();
+            char[] b = wordB.toCharArray();
+
+            Arrays.sort(a);
+            Arrays.sort(b);
+
+            for (int i = 0; i < a.length; i++)
+            {
+                if (a[i] != b[i])
+                {
+                    output = "Nao";
+                    break;
+                }
+            }
+        }
+
         return output;
     }
 }
