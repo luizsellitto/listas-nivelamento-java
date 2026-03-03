@@ -54,16 +54,17 @@ public class Ex01 {
 
         temp.append(letras[input.length() - 1]);
 
-        for (int i = input.length() - 1; i >= 0; i--)
+        for (int i = input.length(); i > 0; i--)
         {
-            output.append(temp);
 
-            if (i > 0)
+
+            if (i > 1 && i != input.length())
             {
                 output.append("*");
             }
 
             temp.setLength(temp.length() - 1);
+            output.append(temp);
         }
         return output.toString();
     }

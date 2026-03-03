@@ -13,8 +13,19 @@ public class Ex03 {
     }
 
     String compute(String input) {
-        String output = null;
-        //put your logic here
-        return output;
+        String invertida = "";
+        if (input == null)
+        {
+            return "Sim";
+        }
+        for (int i = input.length() - 1; i >= 0; i--) {
+            invertida += input.charAt(i);
+        }
+
+        if (input.equals(invertida)) {
+            return "Sim";
+        } else {
+            return "Nao";
+        }
     }
 }

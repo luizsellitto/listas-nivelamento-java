@@ -16,12 +16,12 @@ public class Ex02 {
     String compute(String word, int number) {
         if (word == null || word.isEmpty() || number <= 0 || number > word.length())
         {
-            return "";
+            return null;
         }
 
         String primeira = word.substring(0, number);
         String ultima = word.substring(0, number);
-        String sub;
+        String sub = null;
 
         for (int i = 1; i <= word.length() - number; i++)
         {
